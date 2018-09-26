@@ -76,10 +76,8 @@ body {
   flex-wrap: wrap;
 }
 
-.frontEnd,
-.backEnd,
-.other {
-  /* width: 30%; */
+.skill {
+  min-width: 310px;
   border: 1px solid black;
 }
 
@@ -95,13 +93,11 @@ body {
 .getInTouch {
   background-color: #2e963e;
   width: 30%;
-  border-radius: 12px;
+
   position: relative;
-  top: -3.5rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  top: -2rem;
   min-width: 310px;
   color: #fff;
-  font-size: 1.5em;
 }
 
 .phrase {
@@ -122,6 +118,10 @@ body {
 }
 
 /* Generic */
+.box {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 .text-center {
   text-align: center;
 }
