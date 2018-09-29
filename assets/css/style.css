@@ -27,6 +27,34 @@ body {
   align-items: center;
 }
 
+.scrollDown a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  width: 50px;
+  text-decoration: none;
+}
+
+.scrollDown i:nth-child(1) {
+  animation: arrowsDown 4s infinite;
+}
+
+.scrollDown i:nth-child(2) {
+  position: relative;
+  top: -5px;
+  animation: arrowsDown 4s infinite;
+  animation-delay: 0.5s;
+}
+
+.scrollDown i:nth-child(3) {
+  position: relative;
+  top: -10px;
+  animation: arrowsDown 4s infinite;
+  animation-delay: 1s;
+}
+
 .nav {
   display: flex;
   flex-direction: row;
@@ -36,7 +64,6 @@ body {
 }
 
 .logo {
-  width: 80px;
   height: 80px;
 }
 
@@ -68,17 +95,49 @@ body {
   width: 100%;
 }
 
+#skills div[class='text-center'] {
+  padding: 0 15px;
+}
+
 .skillSet {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
+  margin-bottom: 10rem;
 }
 
 .skill {
-  min-width: 310px;
-  border: 1px solid black;
+  min-width: 278px; /* (310 - padding) */
+  padding: 4rem 2rem;
+  margin: 15px;
+  background-color: white;
+}
+
+.skill i {
+  border: solid;
+  border-radius: 10%;
+  padding: 10px;
+  margin: 0 5px 0 5px;
+  font-size: 3em;
+  color: #4caf50;
+}
+
+.skill p {
+  color: #797979;
+}
+
+.grow {
+  transition: transform 0.3s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1);
+}
+
+.fix-icon-size {
+  width: 60px;
 }
 
 #contact {
@@ -91,13 +150,18 @@ body {
 }
 
 .getInTouch {
-  background-color: #2e963e;
+  background-color: #4caf50;
   width: 30%;
-
   position: relative;
-  top: -2rem;
+  top: -2.2rem;
   min-width: 310px;
   color: #fff;
+}
+
+.getInTouch a {
+  background-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
 }
 
 .phrase {
@@ -111,6 +175,14 @@ body {
   margin: 0 5px 0 5px;
   font-size: 2em;
   color: #c2c4c7;
+}
+
+.change-color {
+  transition: color 0.3s ease-in-out;
+}
+
+.change-color:hover {
+  color: #fff;
 }
 
 .copy {
@@ -142,4 +214,31 @@ body {
 }
 .mb-5 {
   margin-bottom: 5rem;
+}
+.mt-1 {
+  margin-top: 1rem;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.mt-3 {
+  margin-top: 3rem;
+}
+.mt-4 {
+  margin-top: 4rem;
+}
+.mt-5 {
+  margin-top: 5rem;
+}
+
+@keyframes arrowsDown {
+  0% {
+    color: white;
+  }
+  50% {
+    color: gray;
+  }
+  100% {
+    color: white;
+  }
 }
