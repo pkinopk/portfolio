@@ -2,6 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -13,6 +14,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  overflow-x: hidden;
 }
 
 #landing {
@@ -27,6 +29,29 @@ body {
   align-items: center;
 }
 
+.links a {
+  text-decoration: none;
+  color: #fff;
+  margin: 0 5px;
+  transition: all 0.3s ease-out;
+}
+
+.links a:hover {
+  color: #ffeb3b;
+}
+
+.title h1 {
+  font-size: 4rem;
+  margin: 0;
+  color: #fff;
+}
+
+.title h4 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #fff;
+}
+
 .scrollDown a {
   display: flex;
   flex-direction: column;
@@ -38,20 +63,20 @@ body {
 }
 
 .scrollDown i:nth-child(1) {
-  animation: arrowsDown 4s infinite;
+  animation: arrowsDown 2s infinite;
 }
 
 .scrollDown i:nth-child(2) {
   position: relative;
   top: -5px;
-  animation: arrowsDown 4s infinite;
+  animation: arrowsDown 2s infinite;
   animation-delay: 0.5s;
 }
 
 .scrollDown i:nth-child(3) {
   position: relative;
   top: -10px;
-  animation: arrowsDown 4s infinite;
+  animation: arrowsDown 2s infinite;
   animation-delay: 1s;
 }
 
@@ -86,9 +111,58 @@ body {
 .project {
   min-width: 310px;
   width: 32%;
-  height: 400px;
-  background-color: #fff;
-  border: 1px solid black;
+  margin: 4px 4px;
+}
+
+.projectBackground {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  padding-top: 56%;
+  transition: all 0.2s ease-in-out;
+}
+
+.projectBackground:hover {
+  opacity: 0.8;
+}
+
+.projectCards div:nth-child(1) .projectBackground {
+  background-image: url('../img/got.jpg');
+}
+.projectCards div:nth-child(2) .projectBackground {
+  background-image: url('../img/flamingo.jpg');
+}
+.projectCards div:nth-child(3) .projectBackground {
+  background-image: url('../img/flamingo.jpg');
+}
+.projectCards div:nth-child(4) .projectBackground {
+  background-image: url('../img/flamingo.jpg');
+}
+.projectCards div:nth-child(5) .projectBackground {
+  background-image: url('../img/twitch.jpg');
+}
+.projectCards div:nth-child(6) .projectBackground {
+  background-image: url('../img/recipebook.jpg');
+}
+
+.text {
+  position: absolute;
+  /* left: 0; */
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  background-color: #868686c9;
+  padding: 5px;
+  border-radius: 12px 0px 0px 12px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.project img {
+  width: 100%;
+  height: auto;
 }
 
 #skills {
@@ -109,7 +183,7 @@ body {
 }
 
 .skill {
-  min-width: 278px; /* (310 - padding) */
+  min-width: 246px; /* (310 - 2*padding) */
   padding: 4rem 2rem;
   margin: 15px;
   background-color: white;
@@ -177,6 +251,10 @@ body {
   color: #c2c4c7;
 }
 
+.icon {
+  display: inline-block;
+}
+
 .change-color {
   transition: color 0.3s ease-in-out;
 }
@@ -231,6 +309,12 @@ body {
   margin-top: 5rem;
 }
 
+/* Update here! */
+
+.hidden {
+  opacity: 0;
+}
+
 @keyframes arrowsDown {
   0% {
     color: white;
@@ -241,4 +325,167 @@ body {
   100% {
     color: white;
   }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+.skillSet .fadeInRight:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.skillSet .fadeInRight:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+    width: 100%;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  .title h1 {
+    font-size: 2.5rem;
+  }
+
+  .title h4 {
+    font-size: 1rem;
+  }
+}
+
+@keyframes bounceInDown {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -300px, 0);
+    transform: translate3d(0, -300px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  animation-name: bounceInDown;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+}
+
+.bounceInDown:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.bounceInDown:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
 }
